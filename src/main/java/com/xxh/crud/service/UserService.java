@@ -17,5 +17,20 @@ public class UserService {
         return ud.loadAll();
     }
 
+    public void addUser(User user){
+        ud.addUser(user);
+    }
+
+    public User getUser(int id){
+       return ud.getUser(id);
+    }
+
+    public void deleteUser(int id){
+        ud.deleteUser(id);
+    }
+
+    public void update(User user){
+        ud.update(user);
+    }
 
 }

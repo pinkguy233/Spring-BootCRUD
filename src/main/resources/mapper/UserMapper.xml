@@ -4,8 +4,26 @@
 
 <mapper namespace="com.xxh.crud.dao.UserDao">
 
-    <select id="loadAll" resultType="com.xxh.crud.entity.User">
+    <select id="loadAll" resultType="User">
         select * from smbms_user
     </select>
+
+    <select id="getUser" resultType="User" parameterType="int">
+        select * from smbms_user where id = ${id}
+    </select>
+
+    <insert id="addUser"  parameterType="User">
+         INSERT INTO smbms_user(`userCode`,`userName`,`userPassword`) VALUES(${userCode},${userName},${userPassword})
+    </insert>
+    
+    <delete id="deleteUser" parameterType="int">
+        DELETE FROM smbms_user WHERE id = ${id}
+    </delete>
+    
+    <update id="update" parameterType="User">
+        UPDATE smbms_user
+        SET userCode = ${userCode},`userName` = ${userName},`userPassword` = ${userPassword}
+        WHERE id =${id}
+    </update>
 
 </mapper>

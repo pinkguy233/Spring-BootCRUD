@@ -8,4 +8,12 @@ import java.util.List;
 public interface UserDao {
 
     List<User> loadAll();
+
+    User getUser(int id);
+
+    void  addUser(User user);
+
+    void deleteUser(int id);
+
+    void update(User user);
 }
